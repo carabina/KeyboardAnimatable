@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "KeybaordAnimatable"
+  s.name             = "KeyboardAnimatable"
   s.version          = "1.0"
   s.summary          = "A protocol-oriented library for performing animation when toggling keyboard."
 
