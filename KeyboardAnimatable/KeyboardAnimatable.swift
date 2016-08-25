@@ -32,6 +32,7 @@ public extension KeyboardAnimatable where Self: UIViewController {
                 self.animateWhenKeyboardAppear(keyboardHeight: keyboardHeight, duration: duration)
             }
         }
+        
         let dissappearObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillHideNotification, object: nil, queue: nil) { [weak self] (notification) in
             guard let `self` = self else { return }
             
@@ -52,12 +53,13 @@ public extension KeyboardAnimatable where Self: UIViewController {
         for observer in observers {
             NSNotificationCenter.defaultCenter().removeObserver(observer)
         }
+        observers.removeAll()
     }
     
     
     private var observers: [NSObjectProtocol] {
         get {
-            return objc_getAssociatedObject(self, &observersKey) as! [NSObjectProtocol]
+            return objc_getAssociatedObject(self, &observersKey) as? [NSObjectProtocol] ?? []
         }
         set {
             objc_setAssociatedObject(self, &observersKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)

@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pkk-gL-KW2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lDR-gO-jdF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJg-5h-JjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Pkk-gL-KW2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QmF-B9-HlI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PTO-f5-zLz" kind="relationship" relationship="rootViewController" id="ReU-gk-YiA"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1489" y="136"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="G9A-qH-MfP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rar-kS-DQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="PTO-f5-zLz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p6O-So-XG4"/>
+                        <viewControllerLayoutGuide type="bottom" id="xSl-tR-TOA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mRi-Ty-eqW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1m-ak-NZU">
+                                <state key="normal" title="KeyboardAnimatableDemo"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="C03-Zf-Dti"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l1m-ak-NZU" firstAttribute="centerY" secondItem="mRi-Ty-eqW" secondAttribute="centerY" id="73t-mZ-SCK"/>
+                            <constraint firstItem="l1m-ak-NZU" firstAttribute="centerX" secondItem="mRi-Ty-eqW" secondAttribute="centerX" id="MZB-iU-oeU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YOk-tO-x0V"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-676" y="137"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,8 +65,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xae-1G-qP8">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Xae-1G-qP8">
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MUR-nB-UN0"/>
                                     <barButtonItem title="Toggle keyboard" id="Tqw-1t-X21">
                                         <connections>
                                             <action selector="toggleKeyboardButtonTapped:" destination="BYZ-38-t0r" id="orU-5Q-5ZD"/>
@@ -39,9 +87,9 @@
                             <constraint firstItem="Xae-1G-qP8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6lh-4i-Kkw"/>
                             <constraint firstItem="e8V-NQ-1Zl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J7Z-SW-5AT"/>
                             <constraint firstAttribute="trailing" secondItem="e8V-NQ-1Zl" secondAttribute="trailing" id="M1N-2i-NLQ"/>
+                            <constraint firstItem="e8V-NQ-1Zl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PfF-eK-SOg"/>
                             <constraint firstAttribute="trailing" secondItem="Xae-1G-qP8" secondAttribute="trailing" id="Q7c-YR-dHh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xae-1G-qP8" secondAttribute="bottom" id="Xqp-ke-GOf"/>
-                            <constraint firstItem="e8V-NQ-1Zl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dHU-PS-kVh"/>
                             <constraint firstItem="Xae-1G-qP8" firstAttribute="top" secondItem="e8V-NQ-1Zl" secondAttribute="bottom" id="zoz-ER-jOO"/>
                         </constraints>
                     </view>
