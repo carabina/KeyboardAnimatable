@@ -18,12 +18,13 @@ class ViewController: UIViewController, KeyboardAnimatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // enable keyboard animation
         enableKeyboardAnimation()
     }
     
     deinit {
+        // disable keyboard animation, This method MUST be called, or will cause memory issue.
         disableKeyboardAnimation()
     }
     
@@ -53,4 +54,3 @@ class ViewController: UIViewController, KeyboardAnimatable {
     }
 
 }
-
