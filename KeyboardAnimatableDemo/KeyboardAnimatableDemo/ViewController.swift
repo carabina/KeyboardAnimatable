@@ -27,8 +27,8 @@ class ViewController: UIViewController, KeyboardAnimatable {
         disableKeyboardAnimation()
     }
     
-    @IBAction func toggleKeyboardButtonTapped(sender: UIBarButtonItem) {
-        if textView.isFirstResponder() {
+    @IBAction func toggleKeyboardButtonTapped(_ sender: UIBarButtonItem) {
+        if textView.isFirstResponder {
             textView.resignFirstResponder()
         } else {
             textView.becomeFirstResponder()
@@ -36,18 +36,18 @@ class ViewController: UIViewController, KeyboardAnimatable {
     }
     
     
-    func animateWhenKeyboardAppear(keyboardHeight keyboardHeight: CGFloat, duration: NSTimeInterval) {
+    func animateWhenKeyboardAppear(keyboardHeight: CGFloat, duration: TimeInterval) {
         toolBarBottomConstraint.constant = keyboardHeight
         
-        UIView.animateWithDuration(duration) { 
+        UIView.animate(withDuration: duration) { 
             self.view.layoutIfNeeded()
         }
     }
     
-    func animateWhenKeyboardDisappear(keyboardHeight keyboardHeight: CGFloat, duration: NSTimeInterval) {
+    func animateWhenKeyboardDisappear(keyboardHeight: CGFloat, duration: TimeInterval) {
         toolBarBottomConstraint.constant = 0
         
-        UIView.animateWithDuration(duration) {
+        UIView.animate(withDuration: duration) {
             self.view.layoutIfNeeded()
         }
     }

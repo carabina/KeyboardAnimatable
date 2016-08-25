@@ -9,7 +9,6 @@
         <!--Navigation Controller-->
         <scene sceneID="lDR-gO-jdF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OJg-5h-JjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Pkk-gL-KW2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QmF-B9-HlI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -19,13 +18,13 @@
                         <segue destination="PTO-f5-zLz" kind="relationship" relationship="rootViewController" id="ReU-gk-YiA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJg-5h-JjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1489" y="136"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="G9A-qH-MfP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rar-kS-DQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PTO-f5-zLz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p6O-So-XG4"/>
@@ -50,6 +49,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YOk-tO-x0V"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rar-kS-DQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-676" y="137"/>
         </scene>
@@ -70,14 +70,14 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MUR-nB-UN0"/>
                                     <barButtonItem title="Toggle keyboard" id="Tqw-1t-X21">
                                         <connections>
-                                            <action selector="toggleKeyboardButtonTapped:" destination="BYZ-38-t0r" id="orU-5Q-5ZD"/>
+                                            <action selector="toggleKeyboardButtonTapped:" destination="BYZ-38-t0r" id="Kob-Ig-RGC"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e8V-NQ-1Zl">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

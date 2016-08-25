@@ -12,34 +12,34 @@ private var observersKey: Void?
 
 public protocol KeyboardAnimatable: class {
     
-    func animateWhenKeyboardAppear(keyboardHeight keyboardHeight: CGFloat, duration: NSTimeInterval)
-    func animateWhenKeyboardDisappear(keyboardHeight keyboardHeight: CGFloat, duration: NSTimeInterval)
+    func animateWhenKeyboardAppear(keyboardHeight: CGFloat, duration: TimeInterval)
+    func animateWhenKeyboardDisappear(keyboardHeight: CGFloat, duration: TimeInterval)
     
 }
 
 public extension KeyboardAnimatable where Self: UIViewController {
     
     public func enableKeyboardAnimation() {
-        let appearObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: nil) { [weak self] (notification) in
+        let appearObserver = NotificationCenter.default.addObserver(forName: Notification.Name.UIKeyboardWillShow, object: nil, queue: nil) { [weak self] (notification) in
             guard let `self` = self else { return }
             
             if let userInfo = notification.userInfo {
-                let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+                let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
                 
-                let frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+                let frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
                 let keyboardHeight = frameEnd.height
                 
                 self.animateWhenKeyboardAppear(keyboardHeight: keyboardHeight, duration: duration)
             }
         }
         
-        let dissappearObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillHideNotification, object: nil, queue: nil) { [weak self] (notification) in
+        let dissappearObserver = NotificationCenter.default.addObserver(forName: Notification.Name.UIKeyboardWillHide, object: nil, queue: nil) { [weak self] (notification) in
             guard let `self` = self else { return }
             
             if let userInfo = notification.userInfo {
-                let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+                let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
                 
-                let frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+                let frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
                 let keyboardHeight = frameEnd.height
                 
                 self.animateWhenKeyboardDisappear(keyboardHeight: keyboardHeight, duration: duration)
@@ -51,7 +51,7 @@ public extension KeyboardAnimatable where Self: UIViewController {
     
     public func disableKeyboardAnimation() {
         for observer in observers {
-            NSNotificationCenter.defaultCenter().removeObserver(observer)
+            NotificationCenter.default.removeObserver(observer)
         }
         observers.removeAll()
     }
