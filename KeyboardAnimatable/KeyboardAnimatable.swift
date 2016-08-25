@@ -17,9 +17,9 @@ public protocol KeyboardAnimatable: class {
     
 }
 
-extension KeyboardAnimatable where Self: UIViewController {
+public extension KeyboardAnimatable where Self: UIViewController {
     
-    func enableKeyboardAnimation() {
+    public func enableKeyboardAnimation() {
         let appearObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: nil) { [weak self] (notification) in
             guard let `self` = self else { return }
             
@@ -48,7 +48,7 @@ extension KeyboardAnimatable where Self: UIViewController {
         observers = [appearObserver, dissappearObserver]
     }
     
-    func disableKeyboardAnimation() {
+    public func disableKeyboardAnimation() {
         for observer in observers {
             NSNotificationCenter.defaultCenter().removeObserver(observer)
         }
