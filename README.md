@@ -9,9 +9,9 @@ A protocol-oriented library for performing animation when toggling keyboard
 
 * [Installation](#installation)
     - [Cocoapods](#cocoapods)
+    - [Manually](#manually)
     - [Carthage](#carthage)
     - [Swift Package Manager](#swift-package-manager)
-    - [Manually](#manually)
 * [Usage](#usage)
 * [License](#license)
 
@@ -37,6 +37,10 @@ target 'YourApp' do
     pod 'KeyboardAnimatable'
 end
 ```
+
+### Manually
+
+Download [KeyboardAnimatable.swift](https://github.com/JeromeTan1997/KeyboardAnimatable/blob/master/KeyboardAnimatable/KeyboardAnimatable.swift) and add it to your project
 
 ### Carthage
 
