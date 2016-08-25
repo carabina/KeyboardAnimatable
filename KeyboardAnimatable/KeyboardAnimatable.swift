@@ -10,7 +10,7 @@ import UIKit
 
 private var observersKey: Void?
 
-protocol KeyboardAnimatable: class {
+public protocol KeyboardAnimatable: class {
     
     func animateWhenKeyboardAppear(keyboardHeight keyboardHeight: CGFloat, duration: NSTimeInterval)
     func animateWhenKeyboardDisappear(keyboardHeight keyboardHeight: CGFloat, duration: NSTimeInterval)

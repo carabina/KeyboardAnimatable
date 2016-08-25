@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import KeyboardAnimatable
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, KeyboardAnimatable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
