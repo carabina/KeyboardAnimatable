@@ -84,10 +84,12 @@ class ViewController: UIViewController, KeyboardAnimatable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // enable keyboard animation
         enableKeyboardAnimation()
     }
 
     deinit {
+        // disable keyboard animation, This method MUST be called, or will cause memory issue.
         disableKeyboardAnimation()
     }
 
